@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOG IN FORM</title>
+    <link rel="stylesheet" href="signin-page.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fuggles&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+        <h1 id="title">SIGN UP  </h1>
+        <form action="">
+            <div class="input-group">
+                <div class="input-field" id="namefield">
+                    <i class="fa-solid fa-user" ></i>
+                    <input type="text" placeholder="Name" id="">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope" ></i>
+                    <input type="email" placeholder="Email" id="">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-lock" ></i>
+                    <input type="password" placeholder="Password" id="">
+                </div>
+                <p>Lost Password <a href="#">Click Here!</a> </p>
+            </div>
+            <div class="button-field">
+                <button type="button" id="signup">Sign Up</button>
+                <button type="button"  id="signin" class="disable">Sign In</button>
+            </div>
+        </form>
+    </div>
+  </div>
+    <div id="sidenav">
+        <nav>
+           <ul>
+               <li><a href="signin-page.html">SIGN UP/LOG IN</a></li>
+               <li><a href="index.html">HOME</a></li>
+               <li><a href="index.html">FEATURES</a></li>
+               <li><a href="index.html">SERVICES</a></li>
+               <li><a href="index.html">REVIEWS</a></li>
+               <li><a href="index.html">MEET US</a></li>
+           </ul>
+        </nav>
+           </div>
+           <div id="menubtn">
+            <img src="/IMAGES/menu-btn.png" id="menu" alt="">
+        </div>
+        <script>
+
+            let signup = document.getElementById("signup");
+            let signin = document.getElementById("signin");
+            let namefield = document.getElementById("namefield");
+            let title = document.getElementById("title");
+
+            signin.onclick = function(){
+                namefield.style.maxHeight = "0";
+                title.innerHTML = "SIGN IN"
+                signup.classList.add("disable");
+                signin.classList.remove("disable");
+            }
+            signup.onclick = function(){
+                namefield.style.maxHeight = "60px";
+                title.innerHTML = "SIGN UP"
+                signup.classList.remove("disable");
+                signin.classList.add("disable");
+            }
+           
+
+            var menubtn = document.getElementById("menubtn")
+            var sidenav = document.getElementById("sidenav")
+            var menu = document.getElementById("menu")
+    
+            sidenav.style.right = "-250px";
+    
+            menubtn.onclick = function(){
+                if(sidenav.style.right == "-250px"){
+                    sidenav.style.right = "0";
+                    menu.src = "/IMAGES/closebtn.png";
+                }
+                else{
+                    sidenav.style.right = "-250px";
+                    menu.src = "/IMAGES/menu-btn.png";
+                }
+            }
+            </script>
+</body>
+</html>
